@@ -1,49 +1,13 @@
 'use client'
-import React, { useState, useEffect } from 'react'
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent
-} from 'framer-motion'
+import React from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/utils/cn'
 import Link from 'next/link'
+import { FloatingNavProps } from './floating-nave.types'
+import { useFloatingNav } from './use-floating-nav'
 
-export const FloatingNav = ({
-  navItems,
-  className
-}: {
-  navItems: {
-    name: string
-    link: string
-    icon?: JSX.Element
-  }[]
-  className?: string
-}) => {
-  const { scrollYProgress } = useScroll()
-  const [isFullWidth, setIsFullWidth] = useState(false)
-
-  // Definir o estado inicial como visível ao carregar a tela
-  useEffect(() => {
-    setIsFullWidth(true)
-  }, [])
-
-  // Adicionar lógica de rolagem
-  useMotionValueEvent(scrollYProgress, 'change', current => {
-    if (typeof current === 'number') {
-      let direction = current! - scrollYProgress.getPrevious()!
-
-      if (scrollYProgress.get() < 0.0) {
-        setIsFullWidth(false)
-      } else {
-        if (direction < 0) {
-          setIsFullWidth(true)
-        } else {
-          setIsFullWidth(false)
-        }
-      }
-    }
-  })
+export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
+  const { isFullWidth } = useFloatingNav()
 
   return (
     <AnimatePresence>

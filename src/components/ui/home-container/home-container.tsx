@@ -14,7 +14,6 @@ type HomeContainerProps = {
 
 function HomeContainer({ id }: HomeContainerProps) {
   const [isHoveredImage, setIsHoveredImage] = useState<boolean>(false)
-  console.log(isHoveredImage)
   return (
     <div
       className='bg-red flex flex-col items-center justify-center gap-6'
@@ -55,7 +54,7 @@ function HomeContainer({ id }: HomeContainerProps) {
               width={80}
               height={80}
               alt='logo-portfolio'
-              className='mb-2 transition delay-150 duration-300 ease-in-out'
+              className='mb-2'
             />
           )}
         </motion.div>
