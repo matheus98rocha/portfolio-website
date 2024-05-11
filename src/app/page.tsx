@@ -9,17 +9,32 @@ export default function Home() {
   const navItems = [
     {
       name: 'Home',
-      link: '/',
-      icon: <IoMdHome className='h-4 w-4 text-neutral-500 dark:text-white' />
+      link: '#home',
+      icon: <IoMdHome className='text-neutral-500 dark:text-white h-4 w-4' />
+    },
+    {
+      name: 'Projetos',
+      link: '#portfolio',
+      icon: <IoMdHome className='text-neutral-500 dark:text-white h-4 w-4' />
+    },
+    {
+      name: 'Experiências',
+      link: '#experience',
+      icon: <IoMdHome className='text-neutral-500 dark:text-white h-4 w-4' />
+    },
+    {
+      name: 'Contato',
+      link: '#contact',
+      icon: <IoMdHome className='text-neutral-500 dark:text-white h-4 w-4' />
     }
   ]
 
   return (
-    <div className='flex h-[1000px] flex-col items-center justify-start bg-black'>
+    <div className='bg-black flex h-[1000px] flex-col items-center justify-start'>
       <BackgroundBeams />
       <FloatingNav navItems={navItems} className='dark:' />
-      <div className='container mt-32 z-10'>
-        <HomeContainer />
+      <div className='container z-10 mt-32'>
+        <HomeContainer id='home' />
       </div>
       <ScrollBackTop />
     </div>

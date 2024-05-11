@@ -6,15 +6,20 @@ import Image from 'next/image'
 import logo from '../../../../assets/emote.png'
 import profile from '../../../../assets/profile.png'
 
-import { TextGenerateEffect } from '../text-generate-effect/text-generate-effect'
-
 import { motion, AnimatePresence } from 'framer-motion'
 
-function HomeContainer() {
+type HomeContainerProps = {
+  id: string
+}
+
+function HomeContainer({ id }: HomeContainerProps) {
   const [isHoveredImage, setIsHoveredImage] = useState<boolean>(false)
   console.log(isHoveredImage)
   return (
-    <div className='bg-red flex flex-col items-center justify-center gap-6'>
+    <div
+      className='bg-red flex flex-col items-center justify-center gap-6'
+      id='home'
+    >
       <AnimatePresence>
         <motion.div
           initial={{
@@ -55,15 +60,7 @@ function HomeContainer() {
           )}
         </motion.div>
       </AnimatePresence>
-      <div className='flex flex-col flex-wrap items-start justify-center'>
-        <TextGenerateEffect words={'Matheus Rocha'} />
-        <TextGenerateEffect words={'Desenvolvedor de Software'} />
-        <TextGenerateEffect
-          words={
-            'Criando experiências digitais com precisão, engajamento e acessibilidade.'
-          }
-        />
-      </div>
+      <div className='flex flex-col flex-wrap items-start justify-center'></div>
     </div>
   )
 }
