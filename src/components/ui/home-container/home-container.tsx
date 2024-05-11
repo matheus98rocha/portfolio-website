@@ -32,7 +32,7 @@ function HomeContainer() {
           transition={{
             duration: 0.2
           }}
-          className={`flex h-[100px] w-[100px] items-center justify-center rounded-full border ${!isHoveredImage && 'bg-white'} shadow-md shadow-red-300`}
+          className={`flex h-[100px] w-[100px] items-center justify-center rounded-full border ${!isHoveredImage && 'bg-white'} shadow-md shadow-red-500`}
           onMouseEnter={() => setIsHoveredImage(true)}
           onMouseLeave={() => setIsHoveredImage(false)}
         >
