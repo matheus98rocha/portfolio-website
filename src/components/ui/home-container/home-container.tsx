@@ -7,9 +7,10 @@ import logo from '../../../../assets/emote.png'
 import profile from '../../../../assets/profile.png'
 
 import { motion, AnimatePresence } from 'framer-motion'
+import { useHomeContainer } from './use-home-container'
 
 function HomeContainer() {
-  const [isHoveredImage, setIsHoveredImage] = useState<boolean>(false)
+  const { isHoveredImage, setIsHoveredImage } = useHomeContainer()
   return (
     <div
       className='bg-red flex flex-col items-center justify-center gap-6'
