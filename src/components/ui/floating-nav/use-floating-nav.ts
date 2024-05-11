@@ -15,7 +15,7 @@ export const useFloatingNav = () => {
     if (typeof current === 'number') {
       let direction = current! - scrollYProgress.getPrevious()!
 
-      if (scrollYProgress.get() < 0.0) {
+      if (scrollYProgress.get() > 0.0) {
         setIsFullWidth(false)
       } else {
         if (direction < 0) {

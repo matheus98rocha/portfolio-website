@@ -8,11 +8,7 @@ import profile from '../../../../assets/profile.png'
 
 import { motion, AnimatePresence } from 'framer-motion'
 
-type HomeContainerProps = {
-  id: string
-}
-
-function HomeContainer({ id }: HomeContainerProps) {
+function HomeContainer() {
   const [isHoveredImage, setIsHoveredImage] = useState<boolean>(false)
   return (
     <div
@@ -59,7 +55,14 @@ function HomeContainer({ id }: HomeContainerProps) {
           )}
         </motion.div>
       </AnimatePresence>
-      <div className='flex flex-col flex-wrap items-start justify-center'></div>
+      <div className='flex flex-col flex-wrap items-start justify-center gap-2'>
+        <h1 className='text-5xl font-bold text-red-500'>Bem vindo.</h1>
+        <h2 className='text-3xl text-red-400'>Desenvolvedor de Software</h2>
+        <h3 className='text-lg text-red-300'>
+          Criando experiências digitais com precisão, engajamento e
+          acessibilidade.
+        </h3>
+      </div>
     </div>
   )
 }
