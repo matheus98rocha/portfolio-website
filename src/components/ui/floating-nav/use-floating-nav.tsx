@@ -1,8 +1,10 @@
 import { useMotionValueEvent, useScroll } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import { IoMdHome } from 'react-icons/io'
+import { IoIosGitNetwork } from "react-icons/io";
+import { IoMdContacts } from "react-icons/io";
+import { GrProjects } from "react-icons/gr";
 import { NavLinksProps } from './floating-nave.types'
-import { SiI18Next } from 'react-icons/si'
 
 type useFloatingNavProps = {
   t: any
@@ -38,17 +40,17 @@ export const useFloatingNav = ({ t }: useFloatingNavProps) => {
     {
       name: t('routes.projects'),
       link: '#portfolio',
-      icon: <IoMdHome className='h-4 w-4 text-neutral-500 dark:text-white' />
+      icon: <GrProjects className='h-4 w-4 text-neutral-500 dark:text-white' />
     },
     {
       name: t('routes.experience'),
       link: '#experience',
-      icon: <IoMdHome className='h-4 w-4 text-neutral-500 dark:text-white' />
+      icon: <IoIosGitNetwork className='h-4 w-4 text-neutral-500 dark:text-white' />
     },
     {
       name: t('routes.contact'),
       link: '#contact',
-      icon: <IoMdHome className='h-4 w-4 text-neutral-500 dark:text-white' />
+      icon: <IoMdContacts className='h-4 w-4 text-neutral-500 dark:text-white' />
     }
   ]
 
