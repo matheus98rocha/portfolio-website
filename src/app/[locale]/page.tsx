@@ -45,7 +45,9 @@ export default function Home() {
           <HomeContainer />
         </div>
         <div className='flex flex-col items-center justify-center gap-6'>
-          <h3 className='text-3xl text-slate-200'>{t('knowledge')}</h3>
+          <h3 className='text-2xl text-slate-200 md:text-3xl'>
+            {t('knowledge')}
+          </h3>
           <div className='flex flex-col items-center justify-center'>
             <InfiniteMovingCards items={items} direction='left' speed='slow' />
           </div>

@@ -1,8 +1,7 @@
 {
   "Index": {
-    "title": "Welcome.",
-    "subtitle": "Software Developer",
-    "welcomeMessage": "Creating digital experiences with precision, engagement, and accessibility.",
+    "title": "Hello, I'm",
+    "subtitle": "I'm a Software Developer",
     "routes": {
       "home": "Home",
       "projects": "Projects",

@@ -1,8 +1,7 @@
 {
   "Index": {
-    "title": "Bem vindo.",
-    "subtitle": "Desenvolvedor de Software",
-    "welcomeMessage": "Criando experiências digitais com precisão, engajamento e acessibilidade.",
+    "title": "Oi, Me chamo",
+    "subtitle": "E sou Desenvolvedor de Software",
     "routes": {
       "home": "Home",
       "projects": "Projetos",
