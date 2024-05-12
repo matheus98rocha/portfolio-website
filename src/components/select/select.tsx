@@ -46,9 +46,7 @@ function Select() {
         disabled={isPending}
       >
         {langs.map(lang => (
-          <option
-            value={lang.value}
-          >
+          <option key={lang.value} value={lang.value}>
             {lang.label}
           </option>
         ))}
