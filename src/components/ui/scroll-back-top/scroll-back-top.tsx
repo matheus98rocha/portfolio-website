@@ -21,15 +21,11 @@ function ScrollBackTop() {
   useMotionValueEvent(scrollYProgress, 'change', current => {
     if (typeof current === 'number') {
       let direction = current! - scrollYProgress.getPrevious()!
-      console.log(direction)
-      if (scrollYProgress.get() === 0.0) {
-        setVisible(false)
+
+      if (direction > 0) {
+        setVisible(true)
       } else {
-        if (direction > 1) {
-          setVisible(true)
-        } else {
-          setVisible(false)
-        }
+        setVisible(false)
       }
     }
   })

@@ -10,22 +10,17 @@ type useFloatingNavProps = {
 
 export const useFloatingNav = ({ t }: useFloatingNavProps) => {
   const { scrollYProgress } = useScroll()
-  const [isFullWidth, setIsFullWidth] = useState(false)
-
-  // Definir o estado inicial como visível ao carregar a tela
-  useEffect(() => {
-    setIsFullWidth(true)
-  }, [])
+  const [isFullWidth, setIsFullWidth] = useState(true)
 
   // Adicionar lógica de rolagem
   useMotionValueEvent(scrollYProgress, 'change', current => {
     if (typeof current === 'number') {
       let direction = current! - scrollYProgress.getPrevious()!
 
-      if (scrollYProgress.get() > 1) {
+      if (scrollYProgress.get() > 0) {
         setIsFullWidth(false)
       } else {
-        if (direction === 1) {
+        if (direction < 0) {
           setIsFullWidth(true)
         } else {
           setIsFullWidth(false)

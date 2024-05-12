@@ -7,29 +7,15 @@ import { FloatingNavProps, NavLinksProps } from './floating-nave.types'
 import { useFloatingNav } from './use-floating-nav'
 import Select from '@/components/select/select'
 import { useTranslations } from 'next-intl'
+import AnimatedWrapper from '@/layout/animated-wrapper/animated-wrapper'
 
 export const FloatingNav = ({ className }: FloatingNavProps) => {
   const t = useTranslations('Index')
   const { isFullWidth, routes } = useFloatingNav({ t })
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: -100
-        }}
-        animate={{
-          y: 0,
-          opacity: 1
-        }}
-        exit={{
-          opacity: 0,
-          y: -100
-        }}
-        transition={{
-          duration: 0.2
-        }}
+    <AnimatedWrapper>
+      <div
         className={cn(
           `fixed inset-x-0 ${isFullWidth ? 'top-0' : 'top-5'} z-[5000] mx-auto flex ${isFullWidth ? 'w-screen' : 'max-w-fit'} items-center justify-center space-x-4 rounded-full border border-transparent ${isFullWidth ? 'bg-transparent' : 'bg-black'} p-2 pr-2 ${!isFullWidth && 'shadow-sm shadow-red-500'} duration-500 ease-in-out`,
           className
@@ -52,7 +38,7 @@ export const FloatingNav = ({ className }: FloatingNavProps) => {
         <div className='relative flex items-center space-x-1 rounded pr-2 duration-500 ease-in-out'>
           <Select />
         </div>
-      </motion.div>
-    </AnimatePresence>
+      </div>
+    </AnimatedWrapper>
   )
 }

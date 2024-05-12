@@ -8,6 +8,11 @@
       "experience": "Experience",
       "contact": "Contact"
     },
-    "knowledge": "My Knowledge"
+    "knowledge": "My Knowledge",
+    "projects": {
+      "firstProject": "Project developed in partnership with Alura.",
+      "secondProject": "Clone of the Threads application layout.",
+      "thirdProject": "Project developed for a photographer."
+    }
   }
 }

@@ -8,6 +8,11 @@
       "experience": "Experiências",
       "contact": "Contato"
     },
-    "knowledge": "Meus Conhecimentos"
+    "knowledge": "Meus Conhecimentos",
+    "projects": {
+      "firstProject": "Projeto desenvolvido em conjunto com a alura.",
+      "secondProject": "Clone do Layout da aplicação Threads",
+      "thirdProject": "Projeto desenvolvido para um fotografo"
+    }
   }
 }

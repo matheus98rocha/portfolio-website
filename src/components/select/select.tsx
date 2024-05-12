@@ -39,6 +39,7 @@ function Select() {
               .filter(lang => lang.value !== selectedLocale)
               .map(lang => (
                 <p
+                  key={lang.value}
                   className='cursor-pointer'
                   onClick={() => {
                     onSelectChange(lang.value)
