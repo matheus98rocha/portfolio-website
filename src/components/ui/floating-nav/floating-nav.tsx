@@ -3,11 +3,15 @@ import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/utils/cn'
 import Link from 'next/link'
-import { FloatingNavProps } from './floating-nave.types'
+import { FloatingNavProps, NavLinksProps } from './floating-nave.types'
 import { useFloatingNav } from './use-floating-nav'
+import Select from '@/components/select/select'
+import { useTranslations } from 'next-intl'
+import { IoMdHome } from 'react-icons/io'
 
-export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
-  const { isFullWidth } = useFloatingNav()
+export const FloatingNav = ({ className }: FloatingNavProps) => {
+  const t = useTranslations('Index')
+  const { isFullWidth, routes } = useFloatingNav({ t })
 
   return (
     <AnimatePresence>
@@ -32,12 +36,12 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {routes.map((navItem: any, idx: number) => (
           <Link
             key={`link-${idx}`}
             href={navItem.link}
             className={cn(
-              'space-x-1duration-500 relative flex items-center rounded ease-in-out'
+              'relative flex items-center space-x-1 rounded duration-500 ease-in-out'
             )}
           >
             <span className='block sm:hidden'>{navItem.icon}</span>
@@ -46,6 +50,9 @@ export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
             </span>
           </Link>
         ))}
+        <div className='relative flex items-center space-x-1 rounded pr-2 duration-500 ease-in-out'>
+          <Select />
+        </div>
       </motion.div>
     </AnimatePresence>
   )

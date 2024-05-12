@@ -1,0 +1,13 @@
+{
+  "Index": {
+    "title": "Welcome.",
+    "subtitle": "Software Developer",
+    "welcomeMessage": "Creating digital experiences with precision, engagement, and accessibility.",
+    "routes": {
+      "home": "Home",
+      "projects": "Projects",
+      "experience": "Experience",
+      "contact": "Contact"
+    }
+  }
+}

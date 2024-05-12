@@ -4,6 +4,5 @@ export type NavLinksProps = {
   icon?: JSX.Element
 }
 export type FloatingNavProps = {
-  navItems: NavLinksProps[]
   className?: string
 }

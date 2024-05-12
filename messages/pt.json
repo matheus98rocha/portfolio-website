@@ -1,0 +1,13 @@
+{
+  "Index": {
+    "title": "Bem vindo.",
+    "subtitle": "Desenvolvedor de Software",
+    "welcomeMessage": "Criando experiências digitais com precisão, engajamento e acessibilidade.",
+    "routes": {
+      "home": "Home",
+      "projects": "Projetos",
+      "experience": "Experiências",
+      "contact": "Contato"
+    }
+  }
+}
