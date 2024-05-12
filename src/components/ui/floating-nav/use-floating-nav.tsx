@@ -22,10 +22,10 @@ export const useFloatingNav = ({ t }: useFloatingNavProps) => {
     if (typeof current === 'number') {
       let direction = current! - scrollYProgress.getPrevious()!
 
-      if (scrollYProgress.get() >= 1) {
+      if (scrollYProgress.get() > 1) {
         setIsFullWidth(false)
       } else {
-        if (direction <= 1) {
+        if (direction === 1) {
           setIsFullWidth(true)
         } else {
           setIsFullWidth(false)

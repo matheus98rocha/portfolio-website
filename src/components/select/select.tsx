@@ -1,32 +1,18 @@
-'use client'
-import React, { ChangeEvent, useTransition } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import { useLocale } from 'next-intl'
 import { useRouter } from 'next/navigation'
 
-// function LanguageItem({ lang, isSelected, onClick }: LanguageItemProps) {
-//   return (
-//     <p
-//       className={`absolute top-7 cursor-pointer rounded bg-gray-800 p-1 text-white ${
-//         isSelected ? 'hidden' : ''
-//       }`}
-//       onClick={onClick}
-//     >
-//       {lang.toLocaleUpperCase()}
-//     </p>
-//   )
-// }
-
 function Select() {
-  const [isPending, startTransition] = useTransition()
+  const [selectedLocale, setSelectedLocale] = useState(useLocale())
+  const [isOpenSelect, setIsOpenSelect] = useState<boolean>(false)
   const router = useRouter()
-  const localActive = useLocale()
 
-  const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const nextLocale = e.target.value
-    startTransition(() => {
-      router.replace(`/${nextLocale}`)
-    })
+  const onSelectChange = (value: string) => {
+    const nextLocale = value
+    setSelectedLocale(nextLocale)
+    router.replace(`/${nextLocale}`)
   }
+
   const langs = [
     {
       value: 'pt',
@@ -37,20 +23,33 @@ function Select() {
       label: 'EN'
     }
   ]
+
   return (
     <div className='relative'>
-      <select
-        defaultValue={localActive}
-        className='bg-transparent py-2 text-stone-100'
-        onChange={onSelectChange}
-        disabled={isPending}
-      >
-        {langs.map(lang => (
-          <option key={lang.value} value={lang.value}>
-            {lang.label}
-          </option>
-        ))}
-      </select>
+      <div className='bg-transparent py-2 text-stone-100'>
+        <p
+          className='cursor-pointer'
+          onClick={() => setIsOpenSelect(!isOpenSelect)}
+        >
+          {selectedLocale.toUpperCase()}
+        </p>
+        <div className='absolute top-10 cursor-pointer'>
+          {isOpenSelect &&
+            langs
+              .filter(lang => lang.value !== selectedLocale)
+              .map(lang => (
+                <p
+                  className='cursor-pointer'
+                  onClick={() => {
+                    onSelectChange(lang.value)
+                    setIsOpenSelect(false)
+                  }}
+                >
+                  {lang.label}
+                </p>
+              ))}
+        </div>
+      </div>
     </div>
   )
 }
