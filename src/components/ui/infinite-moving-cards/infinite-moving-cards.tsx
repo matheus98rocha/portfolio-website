@@ -84,9 +84,12 @@ export const InfiniteMovingCards = ({
           pauseOnHover && 'hover:[animation-play-state:paused]'
         )}
       >
-        {items.map(item => (
-          <div className='flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-md bg-slate-200 shadow shadow-red-500'>
-            <div className='text-red-500 text-5xl'>{item.stack}</div>
+        {items.map((item, key) => (
+          <div
+            key={key}
+            className='flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-md bg-slate-200 shadow shadow-red-500'
+          >
+            <div className='text-5xl text-red-500'>{item.stack}</div>
             <p>{item.stackName}</p>
           </div>
         ))}
