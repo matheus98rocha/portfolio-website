@@ -4,8 +4,10 @@ import ScrollBackTop from '@/components/ui/scroll-back-top/scroll-back-top'
 import * as Ri from 'react-icons/ri'
 import { SiNestjs } from 'react-icons/si'
 import { FaPython } from 'react-icons/fa'
+import { useTranslations } from 'next-intl'
 
 export default function Home() {
+  const t = useTranslations('Index')
   const items = [
     {
       stackName: 'ReactJs',
@@ -43,7 +45,7 @@ export default function Home() {
           <HomeContainer />
         </div>
         <div className='flex flex-col items-center justify-center gap-6'>
-          <h3 className='text-3xl text-slate-200'>Meus conhecimentos</h3>
+          <h3 className='text-3xl text-slate-200'>{t('knowledge')}</h3>
           <div className='flex flex-col items-center justify-center'>
             <InfiniteMovingCards items={items} direction='left' speed='slow' />
           </div>
