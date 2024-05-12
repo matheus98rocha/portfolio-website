@@ -58,10 +58,12 @@ function HomeContainer() {
           )}
         </motion.div>
       </AnimatePresence>
-      <div className='flex flex-col flex-wrap items-start justify-center gap-2'>
+      <div className='flex flex-col flex-wrap items-center justify-center gap-2 md:items-start'>
         <h1 className='text-5xl font-bold text-red-500'>{t('title')}</h1>
-        <h2 className='text-3xl text-red-400'>{t('subtitle')}</h2>
-        <h3 className='text-lg text-red-300'>{t('welcomeMessage')}</h3>
+        <h2 className='text-3xl text-stone-100'>{t('subtitle')}</h2>
+        <h3 className='text-center text-lg font-light text-stone-50'>
+          {t('welcomeMessage')}
+        </h3>
       </div>
     </div>
   )

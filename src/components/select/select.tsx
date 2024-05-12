@@ -41,7 +41,7 @@ function Select() {
     <div className='relative'>
       <select
         defaultValue={localActive}
-        className='bg-transparent py-2 text-red-500'
+        className='bg-transparent py-2 text-stone-100'
         onChange={onSelectChange}
         disabled={isPending}
       >

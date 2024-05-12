@@ -14,15 +14,14 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({
-  children,
-  params: { locale }
+  children
 }: Readonly<{
   children: React.ReactNode
   params: { locale: string }
 }>) {
   const messages = await getMessages()
   return (
-    <html lang='en'>
+    <html>
       <body className={`${inter.className} bg-black`}>
         <div className='flex h-screen flex-col items-center justify-start scroll-smooth bg-black'>
           <BackgroundBeams />

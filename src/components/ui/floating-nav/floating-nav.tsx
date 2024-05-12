@@ -45,7 +45,7 @@ export const FloatingNav = ({ className }: FloatingNavProps) => {
             )}
           >
             <span className='block sm:hidden'>{navItem.icon}</span>
-            <span className='hidden p-2 text-lg text-red-500 hover:text-white hover:shadow-md sm:block'>
+            <span className='hidden p-2 text-lg text-stone-100 hover:text-white hover:shadow-md sm:block'>
               {navItem.name}
             </span>
           </Link>
