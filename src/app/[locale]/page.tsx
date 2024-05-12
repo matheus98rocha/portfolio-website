@@ -5,6 +5,7 @@ import * as Ri from 'react-icons/ri'
 import { SiNestjs } from 'react-icons/si'
 import { FaPython } from 'react-icons/fa'
 import { useTranslations } from 'next-intl'
+import { TbBrandReactNative } from 'react-icons/tb'
 
 export default function Home() {
   const t = useTranslations('Index')

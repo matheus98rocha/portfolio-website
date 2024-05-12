@@ -87,10 +87,10 @@ export const InfiniteMovingCards = ({
         {items.map((item, key) => (
           <div
             key={key}
-            className='flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-md bg-slate-200 shadow shadow-red-500'
+            className='flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-md bg- shadow shadow-red-500'
           >
             <div className='text-5xl text-red-500'>{item.stack}</div>
-            <p>{item.stackName}</p>
+            <p className='text-red-500'>{item.stackName}</p>
           </div>
         ))}
       </ul>

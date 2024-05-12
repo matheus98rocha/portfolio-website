@@ -7,7 +7,6 @@ import { FloatingNavProps, NavLinksProps } from './floating-nave.types'
 import { useFloatingNav } from './use-floating-nav'
 import Select from '@/components/select/select'
 import { useTranslations } from 'next-intl'
-import { IoMdHome } from 'react-icons/io'
 
 export const FloatingNav = ({ className }: FloatingNavProps) => {
   const t = useTranslations('Index')

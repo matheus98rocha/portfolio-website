@@ -25,7 +25,7 @@ function ScrollBackTop() {
       if (scrollYProgress.get() === 0.0) {
         setVisible(false)
       } else {
-        if (direction > 0) {
+        if (direction > 1) {
           setVisible(true)
         } else {
           setVisible(false)
