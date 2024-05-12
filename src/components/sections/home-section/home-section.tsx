@@ -17,7 +17,7 @@ function HomeSection() {
   const { isHoveredImage, setIsHoveredImage, items } = useHomeContainer()
   return (
     <div
-      className='bg-red flex flex-col items-center justify-center gap-20'
+      className='bg-red flex flex-col items-center justify-center gap-20 mt-7'
       id='home'
     >
       <AnimatedWrapper>
