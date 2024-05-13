@@ -25,7 +25,7 @@ function AnimatedWrapper({ children }: AnimatedWrapperProps) {
           duration: 0.2
         }}
       >
-        <div className='overflow-x-hidden'>{children}</div>
+        {children}
       </motion.div>
     </AnimatePresence>
   )

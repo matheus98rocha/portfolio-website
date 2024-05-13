@@ -23,13 +23,11 @@ export default async function RootLayout({
   return (
     <html>
       <body className={`${inter.className} bg-black`}>
-        <div className='flex h-screen flex-col items-center justify-start scroll-smooth bg-black'>
-          <BackgroundBeams />
-          <NextIntlClientProvider messages={messages}>
-            <FloatingNav />
-            {children}
-          </NextIntlClientProvider>
-        </div>
+        <BackgroundBeams />
+        <NextIntlClientProvider messages={messages}>
+          <FloatingNav />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   )

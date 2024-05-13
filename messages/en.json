@@ -5,6 +5,7 @@
     "routes": {
       "home": "Home",
       "projects": "Projects",
+      "skills": "Skills",
       "experience": "Experience",
       "contact": "Contact"
     },
@@ -12,7 +13,8 @@
     "projects": {
       "firstProject": "Project developed in partnership with Alura.",
       "secondProject": "Clone of the Threads application layout.",
-      "thirdProject": "Project developed for a photographer."
+      "thirdProject": "Project developed for a photographer.",
+      "fourProject": "Projeto desenvolvido durante o evento da Rocketseat de React Native"
     }
   }
 }
