@@ -5,7 +5,6 @@ import * as Ri from 'react-icons/ri'
 import { TbBrandReactNative } from 'react-icons/tb'
 import * as Si from 'react-icons/si'
 import { useTranslations } from 'next-intl'
-import AnimatedWrapper from '@/layout/animated-wrapper/animated-wrapper'
 
 function SkillsSection() {
   const t = useTranslations('Index')
