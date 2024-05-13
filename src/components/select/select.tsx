@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { useState } from 'react'
 import { useLocale } from 'next-intl'
 import { useRouter } from 'next/navigation'
 
