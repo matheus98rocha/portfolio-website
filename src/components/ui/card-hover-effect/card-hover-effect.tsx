@@ -3,6 +3,7 @@ import { cn } from '@/utils/cn'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useCallback, useState } from 'react'
+import { defaultLanguages } from './constants/default-languages'
 
 export const CardsGrid = ({
   items,
@@ -17,7 +18,7 @@ export const CardsGrid = ({
   className?: string
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const [selectedLanguage, setSelectedLanguage] = useState<string>('')
+  const [selectedLanguage, setSelectedLanguage] = useState<string>('NextJS')
 
   const handleSelectLanguage = useCallback(
     (language: string) => {
@@ -28,17 +29,14 @@ export const CardsGrid = ({
     },
     [selectedLanguage]
   )
-  const allLanguages = items.flatMap(item => item.languages)
-  const uniqueLanguagesSet = new Set(allLanguages)
-  const uniqueLanguagesArray = Array.from(uniqueLanguagesSet)
 
   return (
     <>
-      <div className='flex w-full justify-between p-2'>
-        {uniqueLanguagesArray.map(item => (
+      <div className='z-10 flex w-full items-center justify-around rounded-2xl  p-2'>
+        {defaultLanguages.sort().map(item => (
           <p
             key={item}
-            className='text-white'
+            className={`${selectedLanguage === item ? 'link-underline-unhoverd link-underline link-underline-black' : ''} cursor-pointer p-2 text-white`}
             onClick={() => handleSelectLanguage(item)}
           >
             {item}
@@ -105,7 +103,9 @@ export const Card = ({
   children: React.ReactNode
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.5 } }}
       className={cn(
         'relative z-20 h-full w-full overflow-hidden rounded-2xl border border-red-500 bg-black p-4 group-hover:border-slate-700',
         className
@@ -114,7 +114,7 @@ export const Card = ({
       <div className='relative z-50'>
         <div className='p-4'>{children}</div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 export const CardTitle = ({

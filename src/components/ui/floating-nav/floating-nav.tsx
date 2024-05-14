@@ -2,11 +2,17 @@
 import React from 'react'
 import { cn } from '@/utils/cn'
 import Link from 'next/link'
-import { FloatingNavProps } from './floating-nave.types'
+import { FloatingNavProps, NavLinksProps } from './floating-nave.types'
 import { useFloatingNav } from './use-floating-nav'
 import Select from '@/components/select/select'
 import { useTranslations } from 'next-intl'
 import AnimatedWrapper from '@/layout/animated-wrapper/animated-wrapper'
+
+export type NavLinkProps = {
+  link: string
+  name: string
+  icon: React.JSX.Element
+}
 
 export const FloatingNav = ({ className }: FloatingNavProps) => {
   const t = useTranslations('Index')
@@ -20,7 +26,7 @@ export const FloatingNav = ({ className }: FloatingNavProps) => {
           className
         )}
       >
-        {routes.map((navItem: any, idx: number) => (
+        {routes.map((navItem: NavLinksProps, idx: number) => (
           <Link
             key={`link-${idx}`}
             href={navItem.link}
@@ -29,9 +35,9 @@ export const FloatingNav = ({ className }: FloatingNavProps) => {
             )}
           >
             <span className='block sm:hidden'>{navItem.icon}</span>
-            <span className='hidden p-2 text-lg text-stone-100 hover:text-white hover:shadow-md sm:block'>
+            <p className='link-underline link-underline-black hidden p-2 text-lg text-stone-100 hover:text-red-500 sm:block'>
               {navItem.name}
-            </span>
+            </p>
           </Link>
         ))}
         <div className='relative flex items-center space-x-1 rounded pr-2 duration-500 ease-in-out'>
