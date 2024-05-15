@@ -6,3 +6,9 @@ export type NavLinksProps = {
 export type FloatingNavProps = {
   className?: string
 }
+
+export type NavLinkProps = {
+  link: string
+  name: string
+  icon: React.JSX.Element
+}

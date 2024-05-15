@@ -9,7 +9,7 @@ import AnimatedWrapper from '@/layout/animated-wrapper/animated-wrapper'
 export default function Home() {
   return (
     <AnimatedWrapper>
-      <div className='flex h-screen flex-col items-center justify-around gap-20 scroll-smooth bg-black pt-20 pb-20'>
+      <div className='flex h-screen flex-col items-center justify-around gap-20 scroll-smooth bg-black py-20'>
         <HomeSection />
         <SkillsSection />
         <ProjectsSection />

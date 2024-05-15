@@ -52,7 +52,7 @@ function ScrollBackTop() {
             duration: 0.2
           }}
           onClick={backToTop}
-          className='fixed bottom-4 right-4 rounded-lg bg-red-500 px-4 py-2 text-white shadow-md'
+          className='fixed bottom-4 right-4 rounded-lg bg-red-500 px-4 py-2 text-white shadow-md z-20'
         >
           <FaArrowUpLong color='white' />
         </motion.button>

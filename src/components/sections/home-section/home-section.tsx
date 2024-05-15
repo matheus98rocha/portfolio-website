@@ -6,10 +6,7 @@ import ProfileDescription from './components/profile-description/profile-descrip
 
 function HomeSection() {
   return (
-    <div
-      className='bg-red flex flex-col items-center justify-center gap-6'
-      id='home'
-    >
+    <div className='bg-red flex flex-col items-center justify-center gap-6'>
       <ProfileImage />
       <ProfileDescription />
     </div>

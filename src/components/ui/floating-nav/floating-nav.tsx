@@ -8,12 +8,6 @@ import Select from '@/components/select/select'
 import { useTranslations } from 'next-intl'
 import AnimatedWrapper from '@/layout/animated-wrapper/animated-wrapper'
 
-export type NavLinkProps = {
-  link: string
-  name: string
-  icon: React.JSX.Element
-}
-
 export const FloatingNav = ({ className }: FloatingNavProps) => {
   const t = useTranslations('Index')
   const { isFullWidth, routes } = useFloatingNav({ t })

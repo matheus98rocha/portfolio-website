@@ -35,7 +35,7 @@ export const useFloatingNav = ({ t }: useFloatingNavProps) => {
   const routes: NavLinksProps[] = [
     {
       name: t('routes.home'),
-      link: '#home',
+      link: '/',
       icon: <IoMdHome className='h-4 w-4 text-neutral-500 dark:text-white' />
     },
     {
