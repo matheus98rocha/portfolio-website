@@ -5,9 +5,9 @@ import React from 'react'
 function ProfileDescription() {
   const t = useTranslations('Index')
   return (
-    <div className='flex flex-col flex-wrap items-center justify-center gap-4 md:items-start'>
+    <div className='flex flex-col flex-wrap items-center justify-center gap-4 md:items-start px-3 md:p-0'>
       <h1 className='text-center text-3xl font-bold text-stone-50 md:text-5xl'>
-        {t('title')}{' '}
+        {t('title')}
         <Highlight>
           <strong className='text-white px-2'>Matheus</strong>
         </Highlight>
