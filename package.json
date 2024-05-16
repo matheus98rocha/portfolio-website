@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.3",
     "clsx": "^2.1.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "framer-motion": "^11.1.9",

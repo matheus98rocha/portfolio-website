@@ -1,19 +1,28 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useLocale } from 'next-intl'
 import { useRouter } from 'next/navigation'
 
 import * as Io from 'react-icons/io'
+import { sendGAEvent } from '@next/third-parties/google'
 
 function Select() {
   const [selectedLocale, setSelectedLocale] = useState(useLocale())
   const [isOpenSelect, setIsOpenSelect] = useState<boolean>(false)
   const router = useRouter()
 
-  const onSelectChange = (value: string) => {
+  const handleOpenSelect = useCallback(() => {
+    setIsOpenSelect(!isOpenSelect)
+  }, [])
+
+  const onSelectChange = useCallback((value: string) => {
     const nextLocale = value
     setSelectedLocale(nextLocale)
+    sendGAEvent({
+      event: 'changeLanguage',
+      value: nextLocale
+    })
     router.replace(`/${nextLocale}`)
-  }
+  },[])
 
   const langs = [
     {
@@ -29,7 +38,7 @@ function Select() {
   return (
     <div
       className='relative z-50 flex cursor-pointer items-center justify-center bg-transparent py-2 text-stone-100'
-      onClick={() => setIsOpenSelect(!isOpenSelect)}
+      onClick={() => handleOpenSelect()}
     >
       <p>{selectedLocale.toUpperCase()}</p>
       <Io.IoMdArrowDropup

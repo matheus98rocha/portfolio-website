@@ -6,6 +6,8 @@ import { FloatingNav } from '@/components/ui/floating-nav/floating-nav'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -19,6 +21,7 @@ export default async function RootLayout({
   children: React.ReactNode
   params: { locale: string }
 }>) {
+  const gaEnvId = process.env.NEXT_GOOGLE_ANALYTICS_ID || ''
   const messages = await getMessages()
   return (
     <html>
@@ -27,6 +30,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <FloatingNav />
           {children}
+          <GoogleAnalytics gaId={gaEnvId} />
         </NextIntlClientProvider>
       </body>
     </html>
