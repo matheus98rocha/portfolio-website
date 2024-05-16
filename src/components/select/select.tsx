@@ -18,7 +18,7 @@ function Select() {
     const nextLocale = value
     setSelectedLocale(nextLocale)
     sendGAEvent({
-      event: 'changeLanguage',
+      event: 'change_language',
       value: nextLocale
     })
     router.replace(`/${nextLocale}`)
