@@ -4,7 +4,6 @@ import { cn } from '@/utils/cn'
 import Link from 'next/link'
 import { FloatingNavProps, NavLinksProps } from './floating-nave.types'
 import { useFloatingNav } from './use-floating-nav'
-import Select from '@/components/select/select'
 import { useTranslations } from 'next-intl'
 import AnimatedWrapper from '@/layout/animated-wrapper/animated-wrapper'
 
@@ -16,7 +15,7 @@ export const FloatingNav = ({ className }: FloatingNavProps) => {
     <AnimatedWrapper>
       <div
         className={cn(
-          `fixed inset-x-0 ${isFullWidth ? 'top-0' : 'top-5'} z-[5000] mx-auto flex ${isFullWidth ? 'w-full' : 'max-w-fit'} items-center justify-center space-x-4 rounded-full border border-transparent ${isFullWidth ? 'bg-transparent' : 'bg-black'} p-2 pr-2 ${!isFullWidth && 'shadow-sm shadow-red-500'} duration-500 ease-in-out`,
+          `fixed inset-x-0 ${isFullWidth ? 'top-0' : 'top-5'} z-30 mx-auto flex ${isFullWidth ? 'w-full' : 'max-w-fit'} items-center justify-center space-x-4 rounded-full border border-transparent ${isFullWidth ? 'bg-transparent' : 'bg-black'} p-2 pr-2 ${!isFullWidth && 'shadow-sm shadow-red-500'} duration-500 ease-in-out`,
           className
         )}
       >
@@ -34,9 +33,6 @@ export const FloatingNav = ({ className }: FloatingNavProps) => {
             </p>
           </Link>
         ))}
-        <div className='relative flex items-center space-x-1 rounded pr-2 duration-500 ease-in-out'>
-          <Select />
-        </div>
       </div>
     </AnimatedWrapper>
   )

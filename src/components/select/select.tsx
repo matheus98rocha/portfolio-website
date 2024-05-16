@@ -27,33 +27,31 @@ function Select() {
   ]
 
   return (
-    <div className='relative'>
-      <div
-        className='flex cursor-pointer items-center justify-center bg-transparent py-2 text-stone-100'
-        onClick={() => setIsOpenSelect(!isOpenSelect)}
-      >
-        <p>{selectedLocale.toUpperCase()}</p>
-        <Io.IoMdArrowDropup
-          color='white'
-          className={`text-white ${!isOpenSelect ? 'rotate-180' : ''} transition delay-75 duration-75 ease-in-out`}
-        />
-        <div className='absolute top-10 cursor-pointer'>
-          {isOpenSelect &&
-            langs
-              .filter(lang => lang.value !== selectedLocale)
-              .map(lang => (
-                <p
-                  key={lang.value}
-                  className='cursor-pointer'
-                  onClick={() => {
-                    onSelectChange(lang.value)
-                    setIsOpenSelect(false)
-                  }}
-                >
-                  {lang.label}
-                </p>
-              ))}
-        </div>
+    <div
+      className='relative z-50 flex cursor-pointer items-center justify-center bg-transparent py-2 text-stone-100'
+      onClick={() => setIsOpenSelect(!isOpenSelect)}
+    >
+      <p>{selectedLocale.toUpperCase()}</p>
+      <Io.IoMdArrowDropup
+        color='white'
+        className={`text-white ${!isOpenSelect ? 'rotate-180' : ''} transition delay-75 duration-75 ease-in-out`}
+      />
+      <div className='absolute top-10 cursor-pointer'>
+        {isOpenSelect &&
+          langs
+            .filter(lang => lang.value !== selectedLocale)
+            .map(lang => (
+              <p
+                key={lang.value}
+                className='cursor-pointer'
+                onClick={() => {
+                  onSelectChange(lang.value)
+                  setIsOpenSelect(false)
+                }}
+              >
+                {lang.label}
+              </p>
+            ))}
       </div>
     </div>
   )
