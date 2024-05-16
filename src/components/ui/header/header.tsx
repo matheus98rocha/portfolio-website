@@ -3,7 +3,7 @@ import React from 'react'
 
 function Header() {
   return (
-    <div className='relative flex w-full items-center justify-end space-x-4 md:p-2 pr-4 rounded duration-500 ease-in-out z-30'>
+    <div className='container relative z-20 flex w-full items-end justify-end space-x-4 rounded pr-4 duration-500 ease-in-out md:p-2 md:pr-0'>
       <Select />
     </div>
   )

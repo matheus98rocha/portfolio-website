@@ -12,7 +12,7 @@ function Select() {
 
   const handleOpenSelect = useCallback(() => {
     setIsOpenSelect(!isOpenSelect)
-  }, [])
+  }, [isOpenSelect])
 
   const onSelectChange = useCallback((value: string) => {
     const nextLocale = value
@@ -22,7 +22,7 @@ function Select() {
       value: nextLocale
     })
     router.replace(`/${nextLocale}`)
-  },[])
+  }, [])
 
   const langs = [
     {
@@ -37,15 +37,14 @@ function Select() {
 
   return (
     <div
-      className='relative z-50 flex cursor-pointer items-center justify-center bg-transparent py-2 text-stone-100'
+      className='relative z-50 flex cursor-pointer items-center justify-center bg-transparent py-2 text-neutral-500 md:text-white'
       onClick={() => handleOpenSelect()}
     >
       <p>{selectedLocale.toUpperCase()}</p>
       <Io.IoMdArrowDropup
-        color='white'
-        className={`text-white ${!isOpenSelect ? 'rotate-180' : ''} transition delay-75 duration-75 ease-in-out`}
+        className={`text-neutral-500 md:text-white  ${!isOpenSelect ? 'rotate-180' : ''} transition delay-75 duration-75 ease-in-out`}
       />
-      <div className='absolute top-10 cursor-pointer'>
+      <div className='absolute top-10 right-3 cursor-pointer'>
         {isOpenSelect &&
           langs
             .filter(lang => lang.value !== selectedLocale)
