@@ -25,7 +25,7 @@ export default async function RootLayout({
   const messages = await getMessages()
   return (
     <html>
-      <body className={`${inter.className} bg-black`}>
+      <body className={`${inter.className} bg-black scroll-smooth`}>
         <BackgroundBeams />
         <NextIntlClientProvider messages={messages}>
           <FloatingNav />

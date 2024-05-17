@@ -1,3 +1,4 @@
+import { backToTop } from '@/utils/scroll-back-to-top'
 import Link from 'next/link'
 import React from 'react'
 import * as fa from 'react-icons/fa'
@@ -7,10 +8,8 @@ import { MdOutlinePhone } from 'react-icons/md'
 function Footer() {
   return (
     <div className='container relative z-20 flex w-full items-center justify-around space-x-4 border-t border-[#ef444441] py-5 duration-500 ease-in-out md:pr-0'>
-      <div>
-        <Link href={'/'}>
-          <h3 className='text-lg text-[#ef444441]'>Matheus Rocha</h3>
-        </Link>
+      <div onClick={() => backToTop()} className='cursor-pointer'>
+        <h3 className='text-lg text-[#ef444441]'>Matheus Rocha</h3>
       </div>
       <div className='flex items-center justify-between gap-4 text-xl text-[#ef444441]'>
         <Link

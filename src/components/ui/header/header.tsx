@@ -1,4 +1,4 @@
-import Select from '@/components/select/select'
+import Select from '@/components/ui/select/select'
 import React from 'react'
 
 function Header() {

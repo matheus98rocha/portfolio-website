@@ -8,12 +8,9 @@ import {
   useScroll,
   useMotionValueEvent
 } from 'framer-motion'
+import { backToTop } from '@/utils/scroll-back-to-top'
 
 function ScrollBackTop() {
-  const backToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   const { scrollYProgress } = useScroll()
   const [visible, setVisible] = useState(false)
 
