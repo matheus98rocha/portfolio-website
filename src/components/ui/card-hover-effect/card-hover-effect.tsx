@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useCallback, useState } from 'react'
 import { defaultLanguages } from './constants/default-languages'
+import { sendGAEvent } from '@next/third-parties/google'
 
 export const CardsGrid = ({
   items,
@@ -65,6 +66,12 @@ export const CardsGrid = ({
               className='group relative block h-full w-full p-2'
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() =>
+                sendGAEvent({
+                  value: item.title,
+                  event: 'open_project'
+                })
+              }
             >
               <AnimatePresence>
                 {hoveredIndex === idx && (
