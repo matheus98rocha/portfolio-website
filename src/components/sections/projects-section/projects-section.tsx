@@ -2,6 +2,7 @@
 import React from 'react'
 import { CardsGrid } from '../../ui/card-hover-effect/card-hover-effect'
 import { useTranslations } from 'next-intl'
+import OnScrollAnimate from '@/layout/on-scroll-animate/on-scroll-animate'
 
 function ProjectsSection() {
   const t = useTranslations('Index')
@@ -32,13 +33,17 @@ function ProjectsSection() {
     }
   ]
   return (
-    <div
-      id='portfolio'
-      className='flex max-w-5xl flex-col items-center justify-center gap-6 px-8'
-    >
-      <h3 className='text-2xl text-slate-200 md:text-3xl'>Meus Projetos</h3>
-      <CardsGrid items={projects} />
-    </div>
+    <OnScrollAnimate>
+      <div
+        id='portfolio'
+        className='flex max-w-5xl flex-col items-center justify-center gap-6 px-8'
+      >
+        <h3 className='text-2xl text-slate-200 md:text-3xl'>
+          {t('myProjects')}
+        </h3>
+        <CardsGrid items={projects} />
+      </div>
+    </OnScrollAnimate>
   )
 }
 

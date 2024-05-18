@@ -14,15 +14,18 @@ function Select() {
     setIsOpenSelect(!isOpenSelect)
   }, [isOpenSelect])
 
-  const onSelectChange = useCallback((value: string) => {
-    const nextLocale = value
-    setSelectedLocale(nextLocale)
-    sendGAEvent({
-      event: 'change_language',
-      value: nextLocale
-    })
-    router.replace(`/${nextLocale}`)
-  }, [])
+  const onSelectChange = useCallback(
+    (value: string) => {
+      const nextLocale = value
+      setSelectedLocale(nextLocale)
+      sendGAEvent({
+        event: 'change_language',
+        value: nextLocale
+      })
+      router.replace(`/${nextLocale}`)
+    },
+    [router]
+  )
 
   const langs = [
     {
@@ -44,7 +47,7 @@ function Select() {
       <Io.IoMdArrowDropup
         className={`text-neutral-500 md:text-white  ${!isOpenSelect ? 'rotate-180' : ''} transition delay-75 duration-75 ease-in-out`}
       />
-      <div className='absolute top-10 right-3 cursor-pointer'>
+      <div className='absolute right-3 top-10 cursor-pointer'>
         {isOpenSelect &&
           langs
             .filter(lang => lang.value !== selectedLocale)

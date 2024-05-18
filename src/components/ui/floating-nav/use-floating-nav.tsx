@@ -5,7 +5,6 @@ import { IoIosGitNetwork } from 'react-icons/io'
 import { IoMdContacts } from 'react-icons/io'
 import { GrProjects } from 'react-icons/gr'
 import { NavLinksProps } from './floating-nave.types'
-import { FaComputer } from "react-icons/fa6";
 
 type useFloatingNavProps = {
   t: any
@@ -37,11 +36,6 @@ export const useFloatingNav = ({ t }: useFloatingNavProps) => {
       name: t('routes.home'),
       link: '/',
       icon: <IoMdHome className='h-4 w-4 text-neutral-500 dark:text-white' />
-    },
-    {
-      name: t('routes.skills'),
-      link: '#portfolio',
-      icon: <FaComputer className='h-4 w-4 text-neutral-500 dark:text-white' />
     },
     {
       name: t('routes.projects'),

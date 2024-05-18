@@ -10,6 +10,7 @@
       "contact": "Contato"
     },
     "knowledge": "Minhas Habilidades",
+    "myProjects": "Meus Projetos",
     "projects": {
       "firstProject": "Projeto desenvolvido em conjunto com a alura.",
       "secondProject": "Clone do Layout da aplicação Threads",

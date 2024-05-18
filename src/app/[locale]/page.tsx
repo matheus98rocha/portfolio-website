@@ -1,5 +1,6 @@
 'use client'
 
+import ExperienceSection from '@/components/sections/experience-section/experience-section'
 import HomeSection from '@/components/sections/home-section/home-section'
 import ProjectsSection from '@/components/sections/projects-section/projects-section'
 import SkillsSection from '@/components/sections/skills-section/skills-section'
@@ -16,7 +17,8 @@ export default function Home() {
         <HomeSection />
         <SkillsSection />
         <ProjectsSection />
-        <Footer/>
+        <ExperienceSection />
+        <Footer />
       </div>
       <ScrollBackTop />
     </AnimatedWrapper>

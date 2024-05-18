@@ -10,6 +10,7 @@
       "contact": "Contact"
     },
     "knowledge": "My Skills",
+    "myProjects": "My Projects",
     "projects": {
       "firstProject": "Project developed in partnership with Alura.",
       "secondProject": "Clone of the Threads application layout.",
