@@ -5,6 +5,7 @@ import ExperienceContent, {
 } from './components/experience-progress'
 import { AnimatePresence } from 'framer-motion'
 import ExperienceImage from './components/experience-image'
+import OnScrollAnimate from '@/layout/on-scroll-animate/on-scroll-animate'
 
 const experiencies: ExperienceContentProps[] = [
   {
@@ -51,11 +52,13 @@ function ExperienceSection() {
         <h3 className='text-2xl text-slate-200 md:text-3xl'>Experiencias</h3>
         <div className='flex items-center justify-center gap-10'>
           <ExperienceImage />
-          <div className='flex flex-col items-start justify-center gap-3'>
-            {experiencies.map(experiencie => (
-              <ExperienceContent {...experiencie} key={experiencie.name} />
-            ))}
-          </div>
+          <OnScrollAnimate>
+            <div className='flex flex-col items-start justify-center gap-3'>
+              {experiencies.map(experiencie => (
+                <ExperienceContent {...experiencie} key={experiencie.name} />
+              ))}
+            </div>
+          </OnScrollAnimate>
         </div>
       </div>
     </AnimatePresence>

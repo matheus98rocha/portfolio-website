@@ -1,19 +1,11 @@
 import Image from 'next/image'
-import React, { useRef } from 'react'
-import { motion } from 'framer-motion'
+import React from 'react'
 import HeroImage from '../../../../../assets/hero-section-experience.svg'
+import OnScrollAnimate from '@/layout/on-scroll-animate/on-scroll-animate'
 
 function ExperienceImage() {
-  const scrollRef = useRef(null)
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -200 }}
-      whileInView={{
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.5 }
-      }}
-      viewport={{ root: scrollRef }}
+    <OnScrollAnimate
     >
       <Image
         src={HeroImage}
@@ -22,7 +14,7 @@ function ExperienceImage() {
         height={600}
         className='hidden md:block'
       />
-    </motion.div>
+    </OnScrollAnimate>
   )
 }
 
