@@ -5,6 +5,7 @@ import { BackgroundBeams } from '@/components/ui/background-beams/background-bea
 import { FloatingNav } from '@/components/ui/floating-nav/floating-nav'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { GoogleAnalytics } from '@next/third-parties/google'
 
@@ -25,12 +26,13 @@ export default async function RootLayout({
   const messages = await getMessages()
   return (
     <html>
-      <body className={`${inter.className} bg-black scroll-smooth`}>
+      <body className={`${inter.className} scroll-smooth bg-black`}>
         <BackgroundBeams />
         <NextIntlClientProvider messages={messages}>
           <FloatingNav />
           {children}
           <GoogleAnalytics gaId={gaEnvId} />
+          <SpeedInsights />
         </NextIntlClientProvider>
       </body>
     </html>

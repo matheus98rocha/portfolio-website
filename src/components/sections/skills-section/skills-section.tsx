@@ -65,6 +65,11 @@ function SkillsSection() {
       stackName: 'MongoDB',
       stack: <Si.SiMongodb />
     }
+    ,
+    {
+      stackName: 'Typescript',
+      stack: <Si.SiTypescript  />
+    }
   ]
   return (
     <div className='flex flex-col items-center justify-center gap-6'>
