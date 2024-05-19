@@ -15,7 +15,7 @@ function ExperienceSection() {
   const experiencies: ExperienceContentProps[] = [
     {
       name: t('experiencesJourneyBRQ.name'),
-      date: t('experiencesJourneyFirst.date'),
+      date: t('experiencesJourneyBRQ.date'),
       experiences: [
         t('experiencesJourneyBRQ.firstExperiences'),
         t('experiencesJourneyBRQ.secondExperiences'),

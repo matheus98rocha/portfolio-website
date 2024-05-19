@@ -17,7 +17,7 @@ function OnScrollAnimate({ children }: OnScrollAnimateProps) {
           transition: { duration: 0.5 },
           y: 0
         }}
-        viewport={{ root: scrollRef }}
+        viewport={{ root: scrollRef,once: true }}
       >
         {children}
       </motion.div>
