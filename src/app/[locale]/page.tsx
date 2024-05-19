@@ -12,7 +12,7 @@ import AnimatedWrapper from '@/layout/animated-wrapper/animated-wrapper'
 export default function Home() {
   return (
     <AnimatedWrapper>
-      <div className='flex h-screen flex-col items-center justify-around gap-20 scroll-smooth bg-black'>
+      <div className='flex flex-col items-center justify-around gap-20 scroll-smooth bg-black'>
         <Header />
         <HomeSection />
         <SkillsSection />
