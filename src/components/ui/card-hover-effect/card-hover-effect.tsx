@@ -63,7 +63,7 @@ export const CardsGrid = ({
               href={item?.link}
               key={item?.link}
               target='_blank'
-              className='group relative block h-full w-full p-2'
+              className='group relative block w-full p-2'
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
               onClick={() =>
@@ -76,7 +76,7 @@ export const CardsGrid = ({
               <AnimatePresence>
                 {hoveredIndex === idx && (
                   <motion.span
-                    className='absolute inset-0 block h-full w-full rounded-3xl bg-red-400'
+                    className='absolute inset-0 block rounded-3xl bg-red-400'
                     layoutId='hoverBackground'
                     initial={{ opacity: 0 }}
                     animate={{
@@ -114,7 +114,7 @@ export const Card = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
       className={cn(
-        'relative z-20 h-full w-full overflow-hidden rounded-2xl border border-red-500 bg-black p-4 group-hover:border-slate-700',
+        'relative z-20 overflow-hidden rounded-2xl border border-red-500 bg-black p-4 group-hover:border-slate-700',
         className
       )}
     >

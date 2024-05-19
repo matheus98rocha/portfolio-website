@@ -1,7 +1,7 @@
 {
   "Index": {
-    "title": "Oi, Me chamo",
-    "subtitle": "E sou Desenvolvedor de Software",
+    "title": "Oi, me chamo",
+    "subtitle": "e sou Desenvolvedor de Software",
     "routes": {
       "home": "Home",
       "projects": "Projetos",
@@ -9,13 +9,41 @@
       "experience": "Experiências",
       "contact": "Contato"
     },
-    "knowledge": "Minhas Habilidades",
-    "myProjects": "Meus Projetos",
+    "knowledge": "Competências e Especializações",
+    "knowledgeSubtitle": "Descubra as tecnologias e ferramentas que domino e utilizo diariamente para entregar soluções inovadoras e eficientes.",
+    "myProjects": "Portfólio de Projetos",
+    "myProjectsSubtitle": "Explore os projetos em que trabalhei, mostrando meu compromisso com a qualidade e a inovação em cada entrega.",
+    "experiences": "Minha Jornada Profissional",
+    "experiencesSubtitle": "Acompanhe minha trajetória profissional e veja como minhas experiências moldaram minhas habilidades e expertise ao longo dos anos.",
     "projects": {
-      "firstProject": "Projeto desenvolvido em conjunto com a alura.",
-      "secondProject": "Clone do Layout da aplicação Threads",
-      "thirdProject": "Projeto desenvolvido para um fotografo",
-      "fourProject": "Projeto desenvolvido durante o evento da Rocketseat de React Native"
+      "aluraProject": "Projeto desenvolvido em conjunto com a Alura.",
+      "threadsProject": "Clone do layout da aplicação Threads",
+      "photoProject": "Projeto desenvolvido para um fotógrafo",
+      "rnRocketProject": "Projeto desenvolvido durante o evento da Rocketseat de React Native"
+    },
+    "experiencesJourneyBRQ": {
+      "name": "Desenvolvedor Pleno | BRQ",
+      "date": "2022 - Atualmente",
+      "firstExperiences": "Desenvolvimento e manutenção de aplicações web com ReactJS.",
+      "secondExperiences": "Desenvolvimento e manutenção de API com NestJS.",
+      "thirdExperiences": "Desenvolvimento e manutenção de aplicativos móveis com React Native."
+    },
+    "experiencesJourneyQDOISJR": {
+      "name": "Desenvolvedor Junior | QDOIS - Data Inteligence",
+      "date": "2020",
+      "firstExperiences": "Desenvolvimento de aplicações back-end com NodeJS e NestJS.",
+      "secondExperiences": "Integração com bancos de dados MongoDB e Azure DevOps.",
+      "thirdExperiences": "Desenvolvimento de aplicações front-end com ReactJS."
+    },
+    "experiencesJourneyQDOIS": {
+      "name": "Estagiário de Desenvolvimento | QDOIS - Data Inteligence",
+      "date": "2020 - 2021",
+      "firstExperiences": "Desenvolvimento de aplicações Power Apps com SharePoint."
+    },
+    "experiencesJourneyCollege": {
+      "name": "Bacharel em Sistemas de Informação",
+      "date": "2019 - 2022",
+      "firstExperiences": "Faculdade Pitágoras, Belo Horizonte, MG"
     }
   }
 }

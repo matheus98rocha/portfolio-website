@@ -6,50 +6,54 @@ import ExperienceContent, {
 import { AnimatePresence } from 'framer-motion'
 import ExperienceImage from './components/experience-image'
 import OnScrollAnimate from '@/layout/on-scroll-animate/on-scroll-animate'
-
-const experiencies: ExperienceContentProps[] = [
-  {
-    name: 'Bacharel em Sistemas de Informação',
-    date: '2019 - 2022',
-    experiences: ['Faculdade Pitágoras', 'Belo Horizonte, MG'],
-    typeIcon: 'Course'
-  },
-  {
-    name: 'Estagiário de Desenvolvimento | QDOIS - Data Inteligence',
-    date: '2020 - 2021',
-    experiences: ['Desenvolvimento de aplicações Power Apps com SharePoint.'],
-    typeIcon: 'Work'
-  },
-  {
-    name: 'Desenvolvedor Junior | QDOIS - Data Inteligence',
-    date: '2020',
-    experiences: [
-      'Desenvolvimento de aplicações back-end com NodeJS e NestJS.',
-      'Integração com bancos de dados MongoDB e Azure DevOps.',
-      'Desenvolvimento de aplicações front-end com ReactJS.'
-    ],
-    typeIcon: 'Work'
-  },
-  {
-    name: 'Desenvolvedor Pleno | BRQ',
-    date: '2022 - Atualmente',
-    experiences: [
-      'Desenvolvimento e manutenção de aplicações web com ReactJS.',
-      'Desenvolvimento e manutenção de api com NestJS.',
-      'Desenvolvimento e manutenção de aplicativos moveis com React Native'
-    ],
-    typeIcon: 'Work'
-  }
-]
+import SectionWrapper from '@/layout/section-wrapper/section-wrapper'
+import { useTranslations } from 'next-intl'
 
 function ExperienceSection() {
+  const t = useTranslations('Index')
+
+  const experiencies: ExperienceContentProps[] = [
+    {
+      name: t('experiencesJourneyBRQ.name'),
+      date: t('experiencesJourneyFirst.date'),
+      experiences: [
+        t('experiencesJourneyBRQ.firstExperiences'),
+        t('experiencesJourneyBRQ.secondExperiences'),
+        t('experiencesJourneyBRQ.thirdExperiences')
+      ],
+      typeIcon: 'Work'
+    },
+    {
+      name: t('experiencesJourneyQDOISJR.name'),
+      date: t('experiencesJourneyQDOISJR.date'),
+      experiences: [
+        t('experiencesJourneyQDOISJR.firstExperiences'),
+        t('experiencesJourneyQDOISJR.secondExperiences'),
+        t('experiencesJourneyQDOISJR.thirdExperiences')
+      ],
+      typeIcon: 'Work'
+    },
+    {
+      name: t('experiencesJourneyQDOIS.name'),
+      date: t('experiencesJourneyQDOIS.date'),
+      experiences: [t('experiencesJourneyQDOIS.firstExperiences')],
+      typeIcon: 'Work'
+    },
+    {
+      name: t('experiencesJourneyCollege.name'),
+      date: t('experiencesJourneyCollege.date'),
+      experiences: [t('experiencesJourneyCollege.firstExperiences')],
+      typeIcon: 'Course'
+    }
+  ]
+
   return (
     <AnimatePresence>
-      <div
-        id='portfolio'
-        className='flex max-w-5xl flex-col items-center justify-center gap-6 px-8'
+      <SectionWrapper
+        id='experiences'
+        titleSection={t('experiences')}
+        subTitleSection={t('experiencesSubtitle')}
       >
-        <h3 className='text-2xl text-slate-200 md:text-3xl'>Experiencias</h3>
         <div className='flex items-center justify-center gap-10'>
           <ExperienceImage />
           <OnScrollAnimate>
@@ -60,7 +64,7 @@ function ExperienceSection() {
             </div>
           </OnScrollAnimate>
         </div>
-      </div>
+      </SectionWrapper>
     </AnimatePresence>
   )
 }

@@ -5,6 +5,7 @@ import * as Ri from 'react-icons/ri'
 import { TbBrandReactNative } from 'react-icons/tb'
 import * as Si from 'react-icons/si'
 import { useTranslations } from 'next-intl'
+import SectionWrapper from '@/layout/section-wrapper/section-wrapper'
 
 function SkillsSection() {
   const t = useTranslations('Index')
@@ -64,22 +65,22 @@ function SkillsSection() {
     {
       stackName: 'MongoDB',
       stack: <Si.SiMongodb />
-    }
-    ,
+    },
     {
       stackName: 'Typescript',
-      stack: <Si.SiTypescript  />
+      stack: <Si.SiTypescript />
     }
   ]
   return (
-    <div className='flex flex-col items-center justify-center gap-6'>
-      <div className='flex flex-col items-center justify-center gap-6'>
-        <h3 className='text-2xl text-slate-200 md:text-3xl'>
-          {t('knowledge')}
-        </h3>
-      </div>
-      <InfiniteMovingCards items={items} direction='left' speed='slow' />
-    </div>
+    <>
+      <SectionWrapper
+        id='skils'
+        titleSection={t('knowledge')}
+        subTitleSection={t('knowledgeSubtitle')}
+      >
+        <InfiniteMovingCards items={items} direction='left' speed='slow' />
+      </SectionWrapper>
+    </>
   )
 }
 
