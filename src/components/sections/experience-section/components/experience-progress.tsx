@@ -3,10 +3,7 @@ import { MdWork } from 'react-icons/md'
 import { FaUniversity } from 'react-icons/fa'
 
 import { motion } from 'framer-motion'
-
-type ExperienceProgressBarProps = {
-  typeIcon: 'Work' | 'Course'
-}
+import { ExperienceContentProps, ExperienceProgressBarProps } from './experience-image.types'
 
 function ExperienceProgressBar({ typeIcon }: ExperienceProgressBarProps) {
   return (
@@ -17,13 +14,6 @@ function ExperienceProgressBar({ typeIcon }: ExperienceProgressBarProps) {
       </div>
     </div>
   )
-}
-
-export type ExperienceContentProps = {
-  name: string
-  date: string
-  experiences: string[]
-  typeIcon: ExperienceProgressBarProps['typeIcon']
 }
 
 function ExperienceContent({

@@ -1,31 +1,13 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import { FaArrowUpLong } from 'react-icons/fa6'
 
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent
-} from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { backToTop } from '@/utils/scroll-back-to-top'
+import useScrollBackTop from './useScrollBackTop'
 
 function ScrollBackTop() {
-  const { scrollYProgress } = useScroll()
-  const [visible, setVisible] = useState(false)
-
-  // Adicionar lógica de rolagem
-  useMotionValueEvent(scrollYProgress, 'change', current => {
-    if (typeof current === 'number') {
-      let direction = current! - scrollYProgress.getPrevious()!
-
-      if (direction > 0) {
-        setVisible(true)
-      } else {
-        setVisible(false)
-      }
-    }
-  })
+  const { visible } = useScrollBackTop()
 
   return (
     <AnimatePresence>

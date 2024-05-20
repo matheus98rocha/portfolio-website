@@ -2,14 +2,12 @@
 import { cn } from '@/utils/cn'
 import { motion } from 'framer-motion'
 import React from 'react'
+import { HeroHighlightTypes } from './hero-highlight.types'
 
 export const Highlight = ({
   children,
   className
-}: {
-  children: React.ReactNode
-  className?: string
-}) => {
+}: HeroHighlightTypes) => {
   return (
     <motion.span
       initial={{

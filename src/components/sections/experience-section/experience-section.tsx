@@ -1,51 +1,16 @@
 'use client'
 import React from 'react'
-import ExperienceContent, {
-  ExperienceContentProps
-} from './components/experience-progress'
+import ExperienceContent from './components/experience-progress'
 import { AnimatePresence } from 'framer-motion'
 import ExperienceImage from './components/experience-image'
 import OnScrollAnimate from '@/layout/on-scroll-animate/on-scroll-animate'
 import SectionWrapper from '@/layout/section-wrapper/section-wrapper'
 import { useTranslations } from 'next-intl'
+import useExperienceSection from './useExperienceSection'
 
 function ExperienceSection() {
   const t = useTranslations('Index')
-
-  const experiencies: ExperienceContentProps[] = [
-    {
-      name: t('experiencesJourneyBRQ.name'),
-      date: t('experiencesJourneyBRQ.date'),
-      experiences: [
-        t('experiencesJourneyBRQ.firstExperiences'),
-        t('experiencesJourneyBRQ.secondExperiences'),
-        t('experiencesJourneyBRQ.thirdExperiences')
-      ],
-      typeIcon: 'Work'
-    },
-    {
-      name: t('experiencesJourneyQDOISJR.name'),
-      date: t('experiencesJourneyQDOISJR.date'),
-      experiences: [
-        t('experiencesJourneyQDOISJR.firstExperiences'),
-        t('experiencesJourneyQDOISJR.secondExperiences'),
-        t('experiencesJourneyQDOISJR.thirdExperiences')
-      ],
-      typeIcon: 'Work'
-    },
-    {
-      name: t('experiencesJourneyQDOIS.name'),
-      date: t('experiencesJourneyQDOIS.date'),
-      experiences: [t('experiencesJourneyQDOIS.firstExperiences')],
-      typeIcon: 'Work'
-    },
-    {
-      name: t('experiencesJourneyCollege.name'),
-      date: t('experiencesJourneyCollege.date'),
-      experiences: [t('experiencesJourneyCollege.firstExperiences')],
-      typeIcon: 'Course'
-    }
-  ]
+  const { experiencies } = useExperienceSection(t)
 
   return (
     <AnimatePresence>

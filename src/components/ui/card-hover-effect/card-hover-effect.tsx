@@ -2,35 +2,18 @@
 import { cn } from '@/utils/cn'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
-import { useCallback, useState } from 'react'
 import { defaultLanguages } from './constants/default-languages'
 import { sendGAEvent } from '@next/third-parties/google'
+import { CardHoverProps, CardLanguagesProps, CardProps } from './card-hover-effect.types'
+import useCardHoverEffect from './useCardHover'
 
-export const CardsGrid = ({
-  items,
-  className
-}: {
-  items: {
-    title: string
-    description: string
-    link: string
-    languages: string[]
-  }[]
-  className?: string
-}) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const [selectedLanguage, setSelectedLanguage] = useState<string>('NextJS')
-
-  const handleSelectLanguage = useCallback(
-    (language: string) => {
-      if (selectedLanguage.length > 0) {
-        setSelectedLanguage('')
-      }
-      setSelectedLanguage(language)
-    },
-    [selectedLanguage]
-  )
-
+export const CardsGrid = ({ items, className }: CardHoverProps) => {
+  const {
+    handleSelectLanguage,
+    hoveredIndex,
+    setHoveredIndex,
+    selectedLanguage
+  } = useCardHoverEffect()
   return (
     <>
       <div className='z-10 flex w-full items-center justify-around rounded-2xl  p-2'>
@@ -114,7 +97,7 @@ export const Card = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
       className={cn(
-        'relative z-20 overflow-hidden h-56 rounded-2xl border border-red-500 bg-black p-4 group-hover:border-slate-700',
+        'relative z-20 h-56 overflow-hidden rounded-2xl border border-red-500 bg-black p-4 group-hover:border-slate-700',
         className
       )}
     >
@@ -124,26 +107,14 @@ export const Card = ({
     </motion.div>
   )
 }
-export const CardTitle = ({
-  className,
-  children
-}: {
-  className?: string
-  children: React.ReactNode
-}) => {
+export const CardTitle = ({ className, children }: CardProps) => {
   return (
     <h4 className={cn('mt-4 font-bold tracking-wide text-zinc-100', className)}>
       {children}
     </h4>
   )
 }
-export const CardDescription = ({
-  className,
-  children
-}: {
-  className?: string
-  children: React.ReactNode
-}) => {
+export const CardDescription = ({ className, children }: CardProps) => {
   return (
     <p
       className={cn(
@@ -159,10 +130,7 @@ export const CardDescription = ({
 export const CardLanguages = ({
   className,
   languages
-}: {
-  className?: string
-  languages: string[]
-}) => {
+}: CardLanguagesProps) => {
   return (
     <div
       className={cn(
