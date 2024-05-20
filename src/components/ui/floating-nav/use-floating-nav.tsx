@@ -44,7 +44,7 @@ export const useFloatingNav = ({ t }: useFloatingNavProps) => {
     },
     {
       name: t('routes.experience'),
-      link: '#experience',
+      link: '#experiences',
       icon: (
         <IoIosGitNetwork className='h-4 w-4 text-neutral-500 dark:text-white' />
       )
