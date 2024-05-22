@@ -3,6 +3,7 @@ import React from 'react'
 import * as fa from 'react-icons/fa'
 import { IoMailOutline } from 'react-icons/io5'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 function AnimatedSocialMediaButton({
   children
@@ -20,6 +21,8 @@ function AnimatedSocialMediaButton({
 }
 
 function SocialMedia() {
+  const t = useTranslations('Index')
+  
   return (
     <div className='flex items-center justify-between gap-4 text-xl text-red-500'>
       <AnimatedSocialMediaButton>
@@ -47,7 +50,7 @@ function SocialMedia() {
       </AnimatedSocialMediaButton>
       <AnimatedSocialMediaButton>
         <a
-          href={`http://api.whatsapp.com/send?phone=${31998639445}&text=Oi Matheus`}
+          href={`http://api.whatsapp.com/send?phone=${31998639445}&text=${t('whatsappMessage')}`}
           target='_blank'
         >
           <fa.FaWhatsapp />
