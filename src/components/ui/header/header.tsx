@@ -1,4 +1,3 @@
-import SocialMedia from '@/components/sections/social-media/social-media'
 import Select from '@/components/ui/select/select'
 import React from 'react'
 
