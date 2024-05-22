@@ -1,9 +1,6 @@
+import SocialMedia from '@/components/sections/social-media/social-media'
 import { backToTop } from '@/utils/scroll-back-to-top'
-import Link from 'next/link'
 import React from 'react'
-import * as fa from 'react-icons/fa'
-import { IoMailOutline } from 'react-icons/io5'
-import { MdOutlinePhone } from 'react-icons/md'
 
 function Footer() {
   return (
@@ -11,26 +8,7 @@ function Footer() {
       <div onClick={() => backToTop()} className='cursor-pointer'>
         <h3 className='text-lg text-red-500'>Matheus Rocha</h3>
       </div>
-      <div className='flex items-center justify-between gap-4 text-xl text-red-500'>
-        <Link
-          href={'https://www.linkedin.com/in/matheus-rocha-79185b169/'}
-          target='_blank'
-        >
-          <fa.FaLinkedinIn />
-        </Link>
-        <Link
-          href={'https://www.instagram.com/matheus98rocha/'}
-          target='_blank'
-        >
-          <fa.FaInstagram />
-        </Link>
-        <a href={`mailto:matheus98rocha@gmail.com`}>
-          <IoMailOutline />
-        </a>
-        <a href={`tel:+31998639445`}>
-          <MdOutlinePhone />
-        </a>
-      </div>
+      <SocialMedia />
     </div>
   )
 }

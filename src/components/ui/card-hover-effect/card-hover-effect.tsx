@@ -4,8 +4,15 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { defaultLanguages } from './constants/default-languages'
 import { sendGAEvent } from '@next/third-parties/google'
-import { CardHoverProps, CardLanguagesProps, CardProps } from './card-hover-effect.types'
+import {
+  CardHoverProps,
+  CardLanguagesProps,
+  CardProps
+} from './card-hover-effect.types'
 import useCardHoverEffect from './useCardHover'
+import AnimatedWrapper from '@/layout/animated-wrapper/animated-wrapper'
+import Image from 'next/image'
+import projectImage from '../../../../assets/league-of-quiz-image.png'
 
 export const CardsGrid = ({ items, className }: CardHoverProps) => {
   const {
@@ -73,11 +80,26 @@ export const CardsGrid = ({ items, className }: CardHoverProps) => {
                   />
                 )}
               </AnimatePresence>
-              <Card>
-                <CardTitle>{item.title}</CardTitle>
-                <CardDescription>{item.description}</CardDescription>
-                <CardLanguages languages={item.languages} />
-              </Card>
+              {hoveredIndex === idx ? (
+                <AnimatedWrapper>
+                  <Card>
+                    <Image
+                      alt='project-image'
+                      src={projectImage}
+                      width={300}
+                      height={300}
+                      className='rounded'
+                    />
+                    <CardTitle>{item.title}</CardTitle>
+                  </Card>
+                </AnimatedWrapper>
+              ) : (
+                <Card>
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                  <CardLanguages languages={item.languages} />
+                </Card>
+              )}
             </Link>
           ))}
       </div>
@@ -97,7 +119,7 @@ export const Card = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
       className={cn(
-        'relative z-20 h-56 overflow-hidden rounded-2xl border border-red-500 bg-black p-4 group-hover:border-slate-700',
+        'relative z-20 flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-red-500 bg-black p-4 group-hover:border-slate-700',
         className
       )}
     >
@@ -127,10 +149,7 @@ export const CardDescription = ({ className, children }: CardProps) => {
   )
 }
 
-export const CardLanguages = ({
-  className,
-  languages
-}: CardLanguagesProps) => {
+export const CardLanguages = ({ className, languages }: CardLanguagesProps) => {
   return (
     <div
       className={cn(
