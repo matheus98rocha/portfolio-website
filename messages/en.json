@@ -1,5 +1,7 @@
 {
   "Index": {
+    "currentStatusWithJob": "Currently working at",
+    "currentStatusWithoutJob": "Available for work",
     "title": "Hi, I'm",
     "subtitle": "and I'm a Software Developer",
     "routes": {

@@ -1,5 +1,7 @@
 {
   "Index": {
+    "currentStatusWithJob": "Contribuindo atualmente na",
+    "currentStatusWithoutJob": "Disponível para trabalhar",
     "title": "Oi, me chamo",
     "subtitle": "e sou Desenvolvedor de Software",
     "routes": {

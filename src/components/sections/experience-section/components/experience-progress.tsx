@@ -23,7 +23,7 @@ function ExperienceContent({
   typeIcon
 }: ExperienceContentProps) {
   return (
-    <motion.div className='relative flex w-full gap-4 border-b border-red-950 p-4'>
+    <motion.div className='relative flex w-full gap-4 border-b border-red-500 p-4'>
       <ExperienceProgressBar typeIcon={typeIcon} />
       <div className='flex flex-col items-start justify-center gap-3'>
         <div className='flex flex-col items-start justify-center'>

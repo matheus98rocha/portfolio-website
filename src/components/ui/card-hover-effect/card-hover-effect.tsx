@@ -10,7 +10,6 @@ import {
   CardProps
 } from './card-hover-effect.types'
 import useCardHoverEffect from './useCardHover'
-import AnimatedWrapper from '@/layout/animated-wrapper/animated-wrapper'
 
 export const CardsGrid = ({ items, className }: CardHoverProps) => {
   const {
@@ -64,7 +63,7 @@ export const CardsGrid = ({ items, className }: CardHoverProps) => {
               <AnimatePresence>
                 {hoveredIndex === idx && (
                   <motion.span
-                    className='absolute inset-0 block rounded-3xl bg-red-400'
+                    className='absolute inset-0 block rounded-3xl bg-red-500'
                     layoutId='hoverBackground'
                     initial={{ opacity: 0 }}
                     animate={{
