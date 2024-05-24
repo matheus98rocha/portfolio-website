@@ -11,8 +11,6 @@ import {
 } from './card-hover-effect.types'
 import useCardHoverEffect from './useCardHover'
 import AnimatedWrapper from '@/layout/animated-wrapper/animated-wrapper'
-import Image from 'next/image'
-import projectImage from '../../../../assets/league-of-quiz-image.png'
 
 export const CardsGrid = ({ items, className }: CardHoverProps) => {
   const {
@@ -80,26 +78,11 @@ export const CardsGrid = ({ items, className }: CardHoverProps) => {
                   />
                 )}
               </AnimatePresence>
-              {hoveredIndex === idx ? (
-                <AnimatedWrapper>
-                  <Card>
-                    <Image
-                      alt='project-image'
-                      src={projectImage}
-                      width={300}
-                      height={300}
-                      className='rounded'
-                    />
-                    <CardTitle>{item.title}</CardTitle>
-                  </Card>
-                </AnimatedWrapper>
-              ) : (
-                <Card>
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardDescription>{item.description}</CardDescription>
-                  <CardLanguages languages={item.languages} />
-                </Card>
-              )}
+              <Card>
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+                <CardLanguages languages={item.languages} />
+              </Card>
             </Link>
           ))}
       </div>

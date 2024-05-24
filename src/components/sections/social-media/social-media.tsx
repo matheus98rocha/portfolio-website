@@ -22,7 +22,7 @@ function AnimatedSocialMediaButton({
 
 function SocialMedia() {
   const t = useTranslations('Index')
-  
+
   return (
     <div className='flex items-center justify-between gap-4 text-xl text-red-500'>
       <AnimatedSocialMediaButton>
@@ -41,6 +41,11 @@ function SocialMedia() {
           target='_blank'
         >
           <fa.FaInstagram />
+        </Link>
+      </AnimatedSocialMediaButton>
+      <AnimatedSocialMediaButton>
+        <Link href={'https://github.com/matheus98rocha/'} target='_blank'>
+          <fa.FaGithub />
         </Link>
       </AnimatedSocialMediaButton>
       <AnimatedSocialMediaButton>
