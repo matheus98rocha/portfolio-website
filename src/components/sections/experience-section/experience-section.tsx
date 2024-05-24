@@ -19,7 +19,7 @@ function ExperienceSection() {
         titleSection={t('experiences')}
         subTitleSection={t('experiencesSubtitle')}
       >
-        <div className='flex items-center justify-center gap-10'>
+        <div className='items-center justify-center gap-10 md:flex'>
           <ExperienceImage />
           <OnScrollAnimate>
             <div className='flex flex-col items-start justify-center gap-3'>
