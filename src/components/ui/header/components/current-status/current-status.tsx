@@ -12,7 +12,7 @@ function CurrentStatus({ status, company }: CurrentStatusProps) {
         <motion.p
           animate={{ x: ['100%', '-100%'] }}
           transition={{
-            duration: 5,
+            duration: 7,
             ease: 'linear',
             repeat: Infinity
           }}
