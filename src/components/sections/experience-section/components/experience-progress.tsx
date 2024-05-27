@@ -3,7 +3,10 @@ import { MdWork } from 'react-icons/md'
 import { FaUniversity } from 'react-icons/fa'
 
 import { motion } from 'framer-motion'
-import { ExperienceContentProps, ExperienceProgressBarProps } from './experience-image.types'
+import {
+  ExperienceContentProps,
+  ExperienceProgressBarProps
+} from './experience-image.types'
 
 function ExperienceProgressBar({ typeIcon }: ExperienceProgressBarProps) {
   return (
@@ -23,11 +26,11 @@ function ExperienceContent({
   typeIcon
 }: ExperienceContentProps) {
   return (
-    <motion.div className='relative flex items-center justify-start w-full min-h-40 gap-4 border-b border-red-500 p-4'>
+    <motion.div className='relative flex min-h-40 w-full items-center justify-start gap-4 border-b border-red-900 p-4 last:border-b-0'>
       <ExperienceProgressBar typeIcon={typeIcon} />
       <div className='flex flex-col items-start justify-center gap-3'>
         <div className='flex flex-col items-start justify-center'>
-          <p className='bold text-sm text-white font-bold'>{name}</p>
+          <p className='bold text-sm font-bold text-white'>{name}</p>
           <p className='text-xs  text-white'>{date}</p>
         </div>
         <div>

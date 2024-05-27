@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 function CurrentStatus({ status, company }: CurrentStatusProps) {
   const t = useTranslations('Index')
   return (
-    <div className='hidden cursor-default items-center justify-center rounded border border-red-500 p-2 md:flex'>
+    <div className='hidden cursor-default items-center justify-center rounded border border-red-900 p-2 md:flex'>
       <div className='h-3 w-3 rounded-full bg-red-500'></div>
       <div className=' overflow-hidden'>
         <motion.p

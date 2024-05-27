@@ -101,7 +101,7 @@ export const Card = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
       className={cn(
-        'relative z-20 flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-red-500 bg-black p-4 group-hover:border-slate-700',
+        'relative z-20 flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-red-900 bg-black p-4 group-hover:border-slate-700',
         className
       )}
     >
